@@ -135,9 +135,11 @@ open class RichEditorView: UIView, UIScrollViewDelegate, UIWebViewDelegate, UIGe
     }
     
     private func setup() {
-        backgroundColor = .red
+        backgroundColor = .white
         
-        webView.frame = bounds
+        let frame = CGRect(x: 109, y: 80, width: bounds.width - 218, height: bounds.height - 160)
+        
+        webView.frame = frame
         webView.delegate = self
         webView.keyboardDisplayRequiresUserAction = false
         webView.scalesPageToFit = false
@@ -151,6 +153,12 @@ open class RichEditorView: UIView, UIScrollViewDelegate, UIWebViewDelegate, UIGe
         webView.scrollView.clipsToBounds = false
         
         webView.cjw_inputAccessoryView = nil
+        
+        if #available(iOS 9.0, *) {
+            let item : UITextInputAssistantItem = webView.inputAssistantItem
+            item.leadingBarButtonGroups = []
+            item.trailingBarButtonGroups = []
+        }
         
         self.addSubview(webView)
         

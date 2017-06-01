@@ -33,6 +33,7 @@ open class RichBarButtonItem: UIBarButtonItem {
         target = self
         action = #selector(RichBarButtonItem.buttonWasTapped)
         actionHandler = handler
+        tintColor = UIColor(red: 85/255, green: 85/255, blue: 85/255, alpha: 1.0)
     }
     
     public convenience init(title: String = "", handler: ((Void) -> Void)? = nil) {
@@ -40,6 +41,7 @@ open class RichBarButtonItem: UIBarButtonItem {
         target = self
         action = #selector(RichBarButtonItem.buttonWasTapped)
         actionHandler = handler
+        tintColor = UIColor(red: 85/255, green: 85/255, blue: 85/255, alpha: 1.0)
     }
     
     func buttonWasTapped() {
